@@ -1,0 +1,2 @@
+# pong
+projekt z programowania
