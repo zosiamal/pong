@@ -1,5 +1,6 @@
 # pong
 #projekt z programowania
+
 import pygame, sys
 
 pygame.init()
