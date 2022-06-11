@@ -1,4 +1,4 @@
-def kolizja(pilka, paletka):
+def kolizja(pilka, paletka_l, paletka_p):
     #kolizja dla pilki i scian (lewa i prawa sciana tylko na potrzeby testowania przed implementacja punktacji)
     if pilka.x >= W:
         pilka.x_v *= -1
@@ -31,8 +31,19 @@ def kolizja(pilka, paletka):
                 #dlatego te dzialania skomplikowane, dziwne
                 pilka.y_v = -(roznica_y/(max_roznica_y/VMAX))
                 print(f'nowa predkosc: {pilka.y_v}')
+                
+#kolizje dla prawej paletki
+    else:
+        if pilka.y >= paletka_p.y and pilka.y <= paletka_p.y + H_paletki:
+            if pilka.x + pilka.srednica >= paletka_p.x:
+            pilka.x_v *= -1
+            print('kolizja_paletka')
 
-    #else: kolizja dla prawej jest inna - trzeba tu napisac
+            srodek_paletki = paletka_p.y + H_paletki/2
+            roznica_y = srodek_paletki - pilka.y
+            max_roznica_y = H_paletki/2
+            pilka.y_v = -(roznica_y/(max_roznica_y/VMAX))
+            print(f'nowa predkosc: {pilka.y_v}')
 
     #printowanie koordynatow, zeby bylo prosciej debugowac
     print((pilka.x, pilka.y))
