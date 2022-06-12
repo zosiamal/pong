@@ -49,9 +49,10 @@ def main():
         draw_window(dis)
      if ball.x<0:
          PKTright+=1
+         ball.reset()
     elif ball.x>width:
         PKTleft+=1
-    pygame.quit()
+        ball.reset()
 
 
 
