@@ -2,7 +2,9 @@ import pygame, sys
 
 width=800
 height=400
-dis= pygame.display.set_mode((width, height))
+FONT= pygame.font.SysFont("arial", 35)
+pygame.display.set_caption("pong")
+PKTwin = 15
 
 
 gracz1= pygame.image.load()
@@ -58,13 +60,21 @@ def main():
     winning = False
     if PKTleft >=PKTwin: 
         winning=True
+        winningtext= "Left player won!"
     elif PKTright>=PKTwin:
-        won= True
+        winning= True
+        winningtext= "Right player won!"      
     if winning:
+        text=FONT.render(winningtext, 1, WHITE)
         ball.reset()    
+        dis.blit(text,(width//3- text.getwidth()//2, height//3- text.getwidth()//2)
+       pygame.display.update() 
+       pygame.time.delay(7500)
+       
         #leftpaddle.reset()
         #rightpaddle.reset()
-
+     PKTright=0
+     PKTleft=0
 
 
 
