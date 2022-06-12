@@ -45,14 +45,25 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
                 break
-#dodawanie punktow 
+                
         draw_window(dis)
+#dodawanie punktow         
      if ball.x<0:
          PKTright+=1
          ball.reset()
     elif ball.x>width:
         PKTleft+=1
         ball.reset()
+    pygame.quit()
+    winning = False
+    if PKTleft >=PKTwin: 
+        winning=True
+    elif PKTright>=PKTwin:
+        won= True
+    if winning:
+        ball.reset()    
+        #leftpaddle.reset()
+        #rightpaddle.reset()
 
 
 
