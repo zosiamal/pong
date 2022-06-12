@@ -20,8 +20,8 @@ def draw_window(dis, PKTright, PKTleft):
     PKTleft_font = FONT.render(f"{PKTleft}",1, WHITE)
     PKTright_font = FONT.render(f"{PKTright}",1, WHITE)
 #umiejscowienie punktow
-    dis.blit(PKTleft, (WIDTH//4- PKTleft_font.getwidth()//2, 20))
-    dis.blit(PKTright, (WIDTH* (3/4)- PKTright_font.getwidth()//2, 20))
+    dis.place(PKTleft, (WIDTH//4- PKTleft_font.getwidth()//2, 20))
+    dis.place(PKTright, (WIDTH* (3/4)- PKTright_font.getwidth()//2, 20))
 
     dis.blit(gracz1,(0, 0), gracz2,(780,390))
     pygame.display.update()
