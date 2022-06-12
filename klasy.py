@@ -19,12 +19,16 @@ Y_axis = H/2 - H_paletki/2
 
 class Paletka():
     def __init__(self, x, y, szerokosc, wysokosc):
-        self.x = x
-        self.y = y
+        self.x =self.og_x= x
+        self.y= self.og_y=y
         self.szerokosc = szerokosc
         self.wysokosc = wysokosc
         self.predkosc = 5
-
+    def reset(self):
+        self.x = self.og_x
+        self.y = self.og_y
+        self.y_velocity = 0
+        self.x_velocity*=-1        
     def draw(self, ekran):
         pygame.draw.rect(EKRAN, 'white',(self.x, self.y, self.szerokosc, self.wysokosc))
 
